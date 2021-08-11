@@ -1,0 +1,75 @@
+@import '../../index.scss';
+
+.container {
+  width: 75%;
+  height: 100%;
+  @include flexDiv(column);
+  align-items: center;
+
+  &__body {
+    width: 100%;
+    @include flexDiv(column);
+    align-items: center;
+  }
+
+  &__navbar {
+    width: 100%;
+    @include flexDiv(row);
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      color: $text-color;
+      cursor: pointer;
+    }
+
+    .searching-input {
+      @include flexDiv(row);
+      input {
+        width: 250px;
+        height: 25px;
+        padding-left: 1em;
+        transition: width 0.3s ease-in-out;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+  
+        &:focus {
+          width: 350px;
+        }
+      }
+
+      button {
+        margin-left: 0.5em;
+        border: none;
+        background-color: transparent;
+        color: red;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+
+  }
+
+  @media screen and(max-width: $mobile-point) {
+    width: 96%;
+
+    &__navbar {
+      h2 {
+        font-size: 13px;
+      }
+
+      .searching-input {
+
+        input {
+          width: 150px;
+          font-size: 16px;
+
+          &:focus {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}

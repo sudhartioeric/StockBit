@@ -1,0 +1,40 @@
+@import '../../index.scss';
+
+.loading-container {
+  width: 100%;
+  height: 100%;
+  @include flexDiv(row);
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-ring {
+  display: inline-block;
+  background: transparent;
+
+
+  &.light:after {
+    border: 2px solid #fff !important;
+    border-color: #fff #fff #fff transparent !important;
+  }
+}
+
+.loading-ring:after {
+  content: " ";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid black;
+  border-color: black black black transparent;
+  animation: loading-ring 1.2s linear infinite;
+
+}
+@keyframes loading-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
